@@ -1,0 +1,66 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site1.master.cs" Inherits="Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<title>MASTER Page</title>
+<style type="text/css">
+#main{width:100%; height:960px; background:#CCC; margin:0auto; clear:both;}
+#header{width:100%; height:150px; background:#C99; clear:both}
+#nav{width:100%; height:50px; background:#393;}
+.wraper{width:100%; height:500px; background:#C06;}
+.leftside{width:25%; height:500px; background:#9C3; }
+.center{width:50%; height:500px; background:#F63;}
+.rightside{width:25%; height:500px; background:#6C9; float:right}
+.footer1{width:100%; height:130px; background:#06C;}
+.fltlft{ float:left;}
+#form1
+{
+width: 512px;
+height: 320px;
+}
+</style>
+<asp:ContentPlaceHolder ID="head" runat="server">
+</asp:ContentPlaceHolder>
+</head>
+<body>
+<h1>MASTER PAGE</h1>
+<div id="main">
+<div id="header">
+<h4>Header</h4>
+</div>
+<form id="form1" runat="server">
+<div id="nav">
+<h1><asp:Menu ID="Menu1" runat="server" onmenuitemclick="Menu1_MenuItemClick" Orientation="Horizontal">
+<Items>
+<asp:MenuItem Text="Items" Value="New Item">
+<asp:MenuItem Text="Home" Value="Item" NavigateUrl="~/homeWebForm.aspx"></asp:MenuItem>
+<asp:MenuItem Text="Data" Value="Item2" NavigateUrl="~/Default.aspx"></asp:MenuItem>
+<asp:MenuItem Text="Gallery" Value="Item3" NavigateUrl="~/Gallery.aspx"></asp:MenuItem>
+<asp:MenuItem Text="About" Value="Item4" NavigateUrl="~/About.aspx"></asp:MenuItem>
+</asp:MenuItem>
+</Items>
+</asp:Menu>
+</div>
+<div class="wraper">
+<div class="leftside fltlft">
+<h4>leftside</h4>
+</div>
+<div class="center fltlft">
+</h1>
+<br/><br/><br/>
+<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+</asp:ContentPlaceHolder>
+</form>
+</div>
+<div class="right">
+<h4>rightside</h4>
+</div>
+</div>
+<div class="footer1">
+<h4>footer1</h4>
+</div>
+</div>
+</body>
+</html>
